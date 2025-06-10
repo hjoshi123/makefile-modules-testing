@@ -65,7 +65,7 @@ tools += helm=v3.17.2
 # https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
 tools += kubectl=v1.32.3
 # https://github.com/kubernetes-sigs/kind/releases
-tools += kind=v0.27.0
+tools += kind=v0.29.0
 # https://www.vaultproject.io/downloads
 tools += vault=1.19.1
 # https://github.com/Azure/azure-workload-identity/releases
