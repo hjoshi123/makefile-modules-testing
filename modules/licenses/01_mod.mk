@@ -30,11 +30,11 @@ generate-go-licenses: #
 shared_generate_targets += generate-go-licenses
 
 define licenses_target
-$1/LICENSES: $1/go.mod $(licenses_go_work) | $(NEEDS_GO-LICENSES)
+$1/LICENSES: $1/go.mod $(licenses_go_work) $(dir $(lastword $(MAKEFILE_LIST)))/licenses.tmpl | $(NEEDS_GO-LICENSES)
 	cd $$(dir $$@) && \
 		GOWORK=$(abspath $(licenses_go_work)) \
 		GOOS=linux GOARCH=amd64 \
-		$(GO-LICENSES) report --ignore "$$(license_ignore)" ./... > LICENSES
+		$(GO-LICENSES) report --ignore "$$(license_ignore)" --template $(dir $(lastword $(MAKEFILE_LIST)))/licenses.tmpl ./... > LICENSES
 
 generate-go-licenses: $1/LICENSES
 # The /LICENSE targets make sure these files exist.
