@@ -52,6 +52,8 @@ for os_arch in linux/amd64 linux/arm64 darwin/amd64 darwin/arm64; do
 
     # Download the tools
     make -j \
+        DOWNLOAD_DIR="${tmp_dir}/_bin/learn/download" \
+        GOVENDOR_DIR="${tmp_dir}/_bin/learn/govendor" \
         HOST_OS="${os}" \
         HOST_ARCH="${arch}" \
         LEARN_FILE="${learn_file}" \
