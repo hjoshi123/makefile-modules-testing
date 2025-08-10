@@ -61,51 +61,51 @@ NEEDS_CTR = __require-ctr
 
 tools :=
 # https://github.com/helm/helm/releases
-tools += helm=v3.18.3
+tools += helm=v3.18.4
 # https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
-tools += kubectl=v1.33.2
+tools += kubectl=v1.33.3
 # https://github.com/kubernetes-sigs/kind/releases
 tools += kind=v0.29.0
 # https://www.vaultproject.io/downloads
-tools += vault=1.20.1
+tools += vault=1.20.2
 # https://github.com/Azure/azure-workload-identity/releases
 tools += azwi=v1.5.1
 # https://github.com/kyverno/kyverno/releases
-tools += kyverno=v1.14.4
+tools += kyverno=v1.15.0
 # https://github.com/mikefarah/yq/releases
-tools += yq=v4.45.4
+tools += yq=v4.47.1
 # https://github.com/ko-build/ko/releases
 tools += ko=0.18.0
 # https://github.com/protocolbuffers/protobuf/releases
 tools += protoc=31.1
 # https://github.com/aquasecurity/trivy/releases
-tools += trivy=v0.64.1
+tools += trivy=v0.65.0
 # https://github.com/vmware-tanzu/carvel-ytt/releases
 tools += ytt=v0.52.0
 # https://github.com/rclone/rclone/releases
-tools += rclone=v1.70.2
+tools += rclone=v1.70.3
 # https://github.com/istio/istio/releases
-tools += istioctl=1.26.2
+tools += istioctl=1.26.3
 
 ### go packages
 # https://pkg.go.dev/sigs.k8s.io/controller-tools/cmd/controller-gen?tab=versions
 tools += controller-gen=v0.18.0
 # https://pkg.go.dev/golang.org/x/tools/cmd/goimports?tab=versions
-tools += goimports=v0.34.0
+tools += goimports=v0.35.0
 # https://pkg.go.dev/github.com/google/go-licenses/v2?tab=versions
 tools += go-licenses=8c3708dd545a9faed3777bf50a3530ff8082180a
 # https://pkg.go.dev/gotest.tools/gotestsum?tab=versions
 tools += gotestsum=v1.12.3
 # https://pkg.go.dev/sigs.k8s.io/kustomize/kustomize/v5?tab=versions
-tools += kustomize=v5.7.0
+tools += kustomize=v5.7.1
 # https://pkg.go.dev/github.com/itchyny/gojq?tab=versions
 tools += gojq=v0.12.17
 # https://pkg.go.dev/github.com/google/go-containerregistry/pkg/crane?tab=versions
 tools += crane=v0.20.6
 # https://pkg.go.dev/google.golang.org/protobuf/cmd/protoc-gen-go?tab=versions
-tools += protoc-gen-go=v1.36.6
+tools += protoc-gen-go=v1.36.7
 # https://pkg.go.dev/github.com/sigstore/cosign/v2/cmd/cosign?tab=versions
-tools += cosign=v2.5.2
+tools += cosign=v2.5.3
 # https://pkg.go.dev/github.com/cert-manager/boilersuite?tab=versions
 tools += boilersuite=v0.1.0
 # https://pkg.go.dev/github.com/princjef/gomarkdoc/cmd/gomarkdoc?tab=versions
@@ -122,36 +122,36 @@ tools += ginkgo=$(detected_ginkgo_version)
 # https://pkg.go.dev/github.com/cert-manager/klone?tab=versions
 tools += klone=v0.2.0
 # https://pkg.go.dev/github.com/goreleaser/goreleaser/v2?tab=versions
-tools += goreleaser=v2.11.0
+tools += goreleaser=v2.11.2
 # https://pkg.go.dev/github.com/anchore/syft/cmd/syft?tab=versions
-tools += syft=v1.28.0
+tools += syft=v1.30.0
 # https://github.com/cert-manager/helm-tool/releases
 tools += helm-tool=v0.5.3
 # https://github.com/cert-manager/image-tool/releases
 tools += image-tool=v0.1.0
 # https://github.com/cert-manager/cmctl/releases
-tools += cmctl=v2.2.0
+tools += cmctl=v2.3.0
 # https://pkg.go.dev/github.com/cert-manager/release/cmd/cmrel?tab=versions
 tools += cmrel=e3cbe5171488deda000145003e22567bdce622ea
 # https://pkg.go.dev/github.com/golangci/golangci-lint/v2/cmd/golangci-lint?tab=versions
-tools += golangci-lint=v2.2.1
+tools += golangci-lint=v2.3.0
 # https://pkg.go.dev/golang.org/x/vuln?tab=versions
 tools += govulncheck=v1.1.4
 # https://github.com/operator-framework/operator-sdk/releases
 tools += operator-sdk=v1.41.1
 # https://pkg.go.dev/github.com/cli/cli/v2?tab=versions
-tools += gh=v2.74.2
+tools += gh=v2.76.2
 # https://github.com/redhat-openshift-ecosystem/openshift-preflight/releases
 tools += preflight=1.14.0
 # https://github.com/daixiang0/gci/releases
-tools += gci=v0.13.6
+tools += gci=v0.13.7
 # https://github.com/google/yamlfmt/releases
 tools += yamlfmt=v0.17.2
 # https://github.com/yannh/kubeconform/releases
 tools += kubeconform=v0.7.0
 
 # https://pkg.go.dev/k8s.io/code-generator/cmd?tab=versions
-K8S_CODEGEN_VERSION := v0.33.2
+K8S_CODEGEN_VERSION := v0.33.3
 tools += client-gen=$(K8S_CODEGEN_VERSION)
 tools += deepcopy-gen=$(K8S_CODEGEN_VERSION)
 tools += informer-gen=$(K8S_CODEGEN_VERSION)
