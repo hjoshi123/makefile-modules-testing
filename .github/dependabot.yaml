@@ -7,7 +7,7 @@ updates:
   schedule:
     interval: weekly
   groups:
-    all:
+    all-go-deps:
       patterns: ["*"]
 - package-ecosystem: github-actions
   directories:
@@ -15,5 +15,5 @@ updates:
   schedule:
     interval: weekly
   groups:
-    all:
+    all-gh-actions:
       patterns: ["*"]
