@@ -61,16 +61,16 @@ generate-go-mod-tidy: | $(NEEDS_GO)
 
 shared_generate_targets += generate-go-mod-tidy
 
-base_dir := $(dir $(lastword $(MAKEFILE_LIST)))/base/
-
 ifndef dont_generate_govulncheck
+
+govulncheck_base_dir := $(dir $(lastword $(MAKEFILE_LIST)))/base/
 
 .PHONY: generate-govulncheck
 ## Generate base files in the repository
 ## @category [shared] Generate/ Verify
 generate-govulncheck:
-	cp -r $(base_dir)/. ./
-	cd $(base_dir) && \
+	cp -r $(govulncheck_base_dir)/. ./
+	cd $(govulncheck_base_dir) && \
 		find . -type f | while read file; do \
 			sed "s|{{REPLACE:GH-REPOSITORY}}|$(repo_name:github.com/%=%)|g" "$$file" > "$(CURDIR)/$$file"; \
 		done
