@@ -4,7 +4,6 @@
   enabledManagers: [
     'gomod',
   ],
-  separateMajorMinor: false,
   extends: [
     'config:best-practices',
     ':gitSignOff',
