@@ -71,22 +71,31 @@ tools += kind=v0.29.0
 # https://www.vaultproject.io/downloads
 tools += vault=1.20.2
 # https://github.com/Azure/azure-workload-identity/releases
+# renovate: datasource=github-releases packageName=Azure/azure-workload-identity
 tools += azwi=v1.5.1
 # https://github.com/kyverno/kyverno/releases
+# renovate: datasource=github-releases packageName=kyverno/kyverno
 tools += kyverno=v1.15.0
 # https://github.com/mikefarah/yq/releases
+# renovate: datasource=github-releases packageName=mikefarah/yq
 tools += yq=v4.47.1
 # https://github.com/ko-build/ko/releases
+# renovate: datasource=github-releases packageName=ko-build/ko
 tools += ko=0.18.0
 # https://github.com/protocolbuffers/protobuf/releases
+# renovate: datasource=github-releases packageName=protocolbuffers/protobuf
 tools += protoc=31.1
 # https://github.com/aquasecurity/trivy/releases
+# renovate: datasource=github-releases packageName=aquasecurity/trivy
 tools += trivy=v0.65.0
 # https://github.com/vmware-tanzu/carvel-ytt/releases
+# renovate: datasource=github-releases packageName=vmware-tanzu/carvel-ytt
 tools += ytt=v0.52.0
 # https://github.com/rclone/rclone/releases
+# renovate: datasource=github-releases packageName=rclone/rclone
 tools += rclone=v1.70.3
 # https://github.com/istio/istio/releases
+# renovate: datasource=github-releases packageName=istio/istio
 tools += istioctl=1.26.3
 
 ### go packages
@@ -128,10 +137,13 @@ tools += goreleaser=v2.11.2
 # https://pkg.go.dev/github.com/anchore/syft/cmd/syft?tab=versions
 tools += syft=v1.30.0
 # https://github.com/cert-manager/helm-tool/releases
+# renovate: datasource=github-releases packageName=cert-manager/helm-tool
 tools += helm-tool=v0.5.3
 # https://github.com/cert-manager/image-tool/releases
+# renovate: datasource=github-releases packageName=cert-manager/image-tool
 tools += image-tool=v0.1.0
 # https://github.com/cert-manager/cmctl/releases
+# renovate: datasource=github-releases packageName=cert-manager/cmctl
 tools += cmctl=v2.3.0
 # https://pkg.go.dev/github.com/cert-manager/release/cmd/cmrel?tab=versions
 tools += cmrel=e3cbe5171488deda000145003e22567bdce622ea
@@ -140,16 +152,21 @@ tools += golangci-lint=v2.3.0
 # https://pkg.go.dev/golang.org/x/vuln?tab=versions
 tools += govulncheck=v1.1.4
 # https://github.com/operator-framework/operator-sdk/releases
+# renovate: datasource=github-releases packageName=operator-framework/operator-sdk
 tools += operator-sdk=v1.41.1
 # https://pkg.go.dev/github.com/cli/cli/v2?tab=versions
 tools += gh=v2.76.2
 # https://github.com/redhat-openshift-ecosystem/openshift-preflight/releases
+# renovate: datasource=github-releases packageName=redhat-openshift-ecosystem/openshift-preflight
 tools += preflight=1.14.0
 # https://github.com/daixiang0/gci/releases
+# renovate: datasource=github-releases packageName=daixiang0/gci
 tools += gci=v0.13.7
 # https://github.com/google/yamlfmt/releases
+# renovate: datasource=github-releases packageName=google/yamlfmt
 tools += yamlfmt=v0.17.2
 # https://github.com/yannh/kubeconform/releases
+# renovate: datasource=github-releases packageName=yannh/kubeconform
 tools += kubeconform=v0.7.0
 
 # https://pkg.go.dev/k8s.io/code-generator/cmd?tab=versions
