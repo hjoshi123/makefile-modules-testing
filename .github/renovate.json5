@@ -20,7 +20,8 @@
         'modules/tools/**',
       ],
       matchStrings: [
-        '(?:^|\\r\\n|\\r|\\n)#\\s*renovate:\\s*datasource=(?<datasource>\\S+)\\s+packageName=(?<packageName>\\S+)(?:^|\\r\\n|\\r|\\n)tools \\+= \\S+=(?<currentValue>\\S+)'
+        '(?:^|\\r\\n|\\r|\\n)#\\s*renovate:\\s*datasource=(?<datasource>\\S+)\\s+packageName=(?<packageName>\\S+)(?:^|\\r\\n|\\r|\\n)\\S+ \\+= \\S+=(?<currentValue>\\S+)',
+        '(?:^|\\r\\n|\\r|\\n)#\\s*renovate:\\s*datasource=(?<datasource>\\S+)\\s+packageName=(?<packageName>\\S+)(?:^|\\r\\n|\\r|\\n)\\S+ := (?<currentValue>\\S+)'
       ],
     },
   ],
