@@ -24,6 +24,12 @@
       ],
     },
   ],
+  postUpgradeTasks: {
+    commands: [
+      'make learn-tools-shas',
+    ],
+    executionMode: 'branch',
+  },
   packageRules: [
     {
       groupName: 'Tools',
