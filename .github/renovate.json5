@@ -26,7 +26,7 @@
   ],
   postUpgradeTasks: {
     commands: [
-      'make learn-tools-shas',
+      'make vendor-go learn-tools-shas',
     ],
     executionMode: 'branch',
   },
