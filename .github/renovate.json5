@@ -17,17 +17,19 @@
     {
       customType: 'regex',
       managerFilePatterns: [
-        '*',
+        'modules/tools/**',
       ],
       matchStrings: [
         '(?:^|\\r\\n|\\r|\\n)#\\s*renovate:\\s*datasource=(?<datasource>\\S+)\\s+packageName=(?<packageName>\\S+)(?:^|\\r\\n|\\r|\\n)tools \\+= \\S+=(?<currentValue>\\S+)'
       ],
-      versioningTemplate: '{{#if versioning}}{{{versioning}}}{{else}}semver-coerced{{/if}}',
     },
   ],
   packageRules: [
     {
       groupName: 'Tools',
+      matchManagers: [
+        'custom.regex',
+      ],
       matchPackageNames: [
         '*',
       ]
