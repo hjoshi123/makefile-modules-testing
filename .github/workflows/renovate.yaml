@@ -50,4 +50,4 @@ jobs:
           RENOVATE_ONBOARDING: "false"
           RENOVATE_PLATFORM: "github"
           LOG_LEVEL: "debug"
-          RENOVATE_ALLOWED_COMMANDS: '["make generate"]'
+          RENOVATE_ALLOWED_COMMANDS: '[".*"]'
