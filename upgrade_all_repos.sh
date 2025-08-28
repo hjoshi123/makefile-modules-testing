@@ -29,14 +29,18 @@ repos=(
     "https://github.com/cert-manager/istio-csr"
     "https://github.com/cert-manager/approver-policy"
     "https://github.com/cert-manager/trust-manager"
+    "https://github.com/cert-manager/trust-manager-csi-driver"
     "https://github.com/cert-manager/issuer-lib"
     "https://github.com/cert-manager/csi-driver"
     "https://github.com/cert-manager/csi-driver-spiffe"
+    "https://github.com/cert-manager/csi-lib"
     "https://github.com/cert-manager/openshift-routes"
     "https://github.com/cert-manager/cmctl"
     "https://github.com/cert-manager/helm-tool"
     "https://github.com/cert-manager/image-tool"
     "https://github.com/cert-manager/google-cas-issuer"
+    "https://github.com/cert-manager/controller-framework"
+    "https://github.com/cert-manager/webhook-cert-lib"
 )
 
 echo "This script will create upgrade PRs for the following repos:"
