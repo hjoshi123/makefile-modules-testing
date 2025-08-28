@@ -100,6 +100,7 @@ tools += istioctl=1.26.3
 
 ### go packages
 # https://pkg.go.dev/sigs.k8s.io/controller-tools/cmd/controller-gen?tab=versions
+# renovate: datasource=go packageName=sigs.k8s.io/controller-tools
 tools += controller-gen=v0.18.0
 # https://pkg.go.dev/golang.org/x/tools/cmd/goimports?tab=versions
 tools += goimports=v0.35.0
@@ -170,6 +171,7 @@ tools += yamlfmt=v0.17.2
 tools += kubeconform=v0.7.0
 
 # https://pkg.go.dev/k8s.io/code-generator/cmd?tab=versions
+# renovate: datasource=go packageName=k8s.io/code-generator
 K8S_CODEGEN_VERSION := v0.33.3
 tools += client-gen=$(K8S_CODEGEN_VERSION)
 tools += deepcopy-gen=$(K8S_CODEGEN_VERSION)
