@@ -69,8 +69,8 @@ tools += kubectl=v1.33.3
 # renovate: datasource=github-releases packageName=kubernetes-sigs/kind
 tools += kind=v0.30.0
 # https://www.vaultproject.io/downloads
-# renovate: datasource=docker packageName=hashicorp/vault
-tools += vault=1.20.2
+# renovate: datasource=github-releases packageName=hashicorp/vault
+tools += vault=v1.20.2
 # https://github.com/Azure/azure-workload-identity/releases
 # renovate: datasource=github-releases packageName=Azure/azure-workload-identity
 tools += azwi=v1.5.1
@@ -489,7 +489,7 @@ vault_darwin_arm64_SHA256SUM=0564747cdc4db1343e17e96ec05c4b69be565052c1ed5377c33
 .PRECIOUS: $(DOWNLOAD_DIR)/tools/vault@$(VAULT_VERSION)_$(HOST_OS)_$(HOST_ARCH)
 $(DOWNLOAD_DIR)/tools/vault@$(VAULT_VERSION)_$(HOST_OS)_$(HOST_ARCH): | $(DOWNLOAD_DIR)/tools
 	@source $(lock_script) $@; \
-		$(CURL) https://releases.hashicorp.com/vault/$(VAULT_VERSION)/vault_$(VAULT_VERSION)_$(HOST_OS)_$(HOST_ARCH).zip -o $(outfile).zip; \
+		$(CURL) https://releases.hashicorp.com/vault/$(VAULT_VERSION:v%=%)/vault_$(VAULT_VERSION:v%=%)_$(HOST_OS)_$(HOST_ARCH).zip -o $(outfile).zip; \
 		$(checkhash_script) $(outfile).zip $(vault_$(HOST_OS)_$(HOST_ARCH)_SHA256SUM); \
 		unzip -qq -c $(outfile).zip > $(outfile); \
 		chmod +x $(outfile); \
