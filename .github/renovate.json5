@@ -28,23 +28,7 @@
       ],
     },
   ],
-  baseBranchPatterns: [
-    'main',
-    'octo-sts-poc',
-  ],
   packageRules: [
-    {
-      matchBaseBranches: [
-        'octo-sts-poc',
-      ],
-      enabled: false, // Disable upgrades in general for the octo-sts-poc branch.
-    },
-    {
-      matchManagers: [
-        'github-actions',
-      ],
-      enabled: false, // Disable the github-actions in general to enable it for more specific configuration.
-    },
     {
       groupName: 'Tools',
       matchManagers: [
@@ -61,10 +45,6 @@
       groupName: 'Misc GitHub actions',
       matchManagers: [
         'github-actions',
-      ],
-      enabled: true,
-      matchBaseBranches: [
-        'octo-sts-poc',
       ],
     },
     {
