@@ -28,12 +28,6 @@
       ],
     },
   ],
-  postUpgradeTasks: {
-    commands: [
-      'make vendor-go learn-tools-shas',
-    ],
-    executionMode: 'branch',
-  },
   baseBranchPatterns: [
     'main',
     'octo-sts-poc',
@@ -56,6 +50,12 @@
       matchManagers: [
         'custom.regex',
       ],
+      postUpgradeTasks: {
+        commands: [
+          'make vendor-go learn-tools-shas',
+        ],
+        executionMode: 'branch',
+      }
     },
     {
       groupName: 'Misc GitHub actions',
