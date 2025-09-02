@@ -73,6 +73,17 @@
         'gomod',
       ],
     },
+    {
+      matchManagers: [
+        'custom.regex',
+        'gomod',
+      ],
+      matchUpdateTypes: [
+        'major',
+        'digest',
+      ],
+      dependencyDashboardApproval: true
+    }
   ],
   ignorePaths: [
     '**/vendor/**',
