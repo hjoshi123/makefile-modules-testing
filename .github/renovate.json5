@@ -56,17 +56,11 @@
       matchManagers: [
         'custom.regex',
       ],
-      matchPackageNames: [
-        '*',
-      ]
     },
     {
       groupName: 'Misc GitHub actions',
       matchManagers: [
         'github-actions',
-      ],
-      matchPackageNames: [
-        '*',
       ],
       enabled: true,
       matchBaseBranches: [
@@ -77,9 +71,6 @@
       groupName: 'Misc Go deps',
       matchManagers: [
         'gomod',
-      ],
-      matchPackageNames: [
-        '*',
       ],
     },
   ],
