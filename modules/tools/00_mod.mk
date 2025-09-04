@@ -70,7 +70,7 @@ tools += kubectl=v1.33.3
 tools += kind=v0.30.0
 # https://www.vaultproject.io/downloads
 # renovate: datasource=github-releases packageName=hashicorp/vault
-tools += vault=v1.20.2
+tools += vault=v1.20.3
 # https://github.com/Azure/azure-workload-identity/releases
 # renovate: datasource=github-releases packageName=Azure/azure-workload-identity
 tools += azwi=v1.5.1
@@ -88,7 +88,7 @@ tools += ko=0.18.0
 tools += protoc=32.0
 # https://github.com/aquasecurity/trivy/releases
 # renovate: datasource=github-releases packageName=aquasecurity/trivy
-tools += trivy=v0.65.0
+tools += trivy=v0.66.0
 # https://github.com/vmware-tanzu/carvel-ytt/releases
 # renovate: datasource=github-releases packageName=vmware-tanzu/carvel-ytt
 tools += ytt=v0.52.0
@@ -105,7 +105,7 @@ tools += istioctl=1.27.0
 tools += controller-gen=v0.19.0
 # https://pkg.go.dev/golang.org/x/tools/cmd/goimports?tab=versions
 # renovate: datasource=go packageName=golang.org/x/tools
-tools += goimports=v0.35.0
+tools += goimports=v0.36.0
 # https://pkg.go.dev/github.com/google/go-licenses/v2?tab=versions
 tools += go-licenses=e4be799587800ffd119a1b419f13daf4989da546
 # https://pkg.go.dev/gotest.tools/gotestsum?tab=versions
@@ -122,7 +122,7 @@ tools += gojq=v0.12.17
 tools += crane=v0.20.6
 # https://pkg.go.dev/google.golang.org/protobuf/cmd/protoc-gen-go?tab=versions
 # renovate: datasource=go packageName=google.golang.org/protobuf
-tools += protoc-gen-go=v1.36.7
+tools += protoc-gen-go=v1.36.8
 # https://pkg.go.dev/github.com/sigstore/cosign/v2/cmd/cosign?tab=versions
 # renovate: datasource=go packageName=github.com/sigstore/cosign/v2
 tools += cosign=v2.5.3
@@ -150,7 +150,7 @@ tools += klone=v0.2.0
 tools += goreleaser=v2.11.2
 # https://pkg.go.dev/github.com/anchore/syft/cmd/syft?tab=versions
 # renovate: datasource=go packageName=github.com/anchore/syft
-tools += syft=v1.30.0
+tools += syft=v1.32.0
 # https://github.com/cert-manager/helm-tool/releases
 # renovate: datasource=github-releases packageName=cert-manager/helm-tool
 tools += helm-tool=v0.5.3
@@ -164,7 +164,7 @@ tools += cmctl=v2.3.0
 tools += cmrel=e3cbe5171488deda000145003e22567bdce622ea
 # https://pkg.go.dev/github.com/golangci/golangci-lint/v2/cmd/golangci-lint?tab=versions
 # renovate: datasource=go packageName=github.com/golangci/golangci-lint/v2
-tools += golangci-lint=v2.3.0
+tools += golangci-lint=v2.4.0
 # https://pkg.go.dev/golang.org/x/vuln?tab=versions
 # renovate: datasource=go packageName=golang.org/x/vuln
 tools += govulncheck=v1.1.4
@@ -173,7 +173,7 @@ tools += govulncheck=v1.1.4
 tools += operator-sdk=v1.41.1
 # https://pkg.go.dev/github.com/cli/cli/v2?tab=versions
 # renovate: datasource=go packageName=github.com/cli/cli/v2
-tools += gh=v2.76.2
+tools += gh=v2.78.0
 # https://github.com/redhat-openshift-ecosystem/openshift-preflight/releases
 # renovate: datasource=github-releases packageName=redhat-openshift-ecosystem/openshift-preflight
 tools += preflight=1.14.1
@@ -482,10 +482,10 @@ $(DOWNLOAD_DIR)/tools/kind@$(KIND_VERSION)_$(HOST_OS)_$(HOST_ARCH): | $(DOWNLOAD
 		$(checkhash_script) $(outfile) $(kind_$(HOST_OS)_$(HOST_ARCH)_SHA256SUM); \
 		chmod +x $(outfile)
 
-vault_linux_amd64_SHA256SUM=5846abf08deaf04cc9fdbb7c1eddda3348671590445f81bcdb0a2e0d32396c2e
-vault_linux_arm64_SHA256SUM=97543eb24f3fde2b8a2cdc79d6017fc39d3d91f42b5e856e5808f30de51cf3a3
-vault_darwin_amd64_SHA256SUM=af9b5fecf07309ad1ac809a9174aa6e9d86fcf3854088e33ef4d3150eda0d47b
-vault_darwin_arm64_SHA256SUM=0564747cdc4db1343e17e96ec05c4b69be565052c1ed5377c33ae6eaf919ef62
+vault_linux_amd64_SHA256SUM=128d35b82bed319b8ce3caec99286a7d458342d8def5e6ca4d20cc7621df53d3
+vault_linux_arm64_SHA256SUM=35847f819eb3917f1b454994bd517bf4f83fdbd7e9a06fa17f37a7c99ab7eb9d
+vault_darwin_amd64_SHA256SUM=c83250d6432a200f6fdbda3e648351858ea8754d20147a761fc85f40f4357d13
+vault_darwin_arm64_SHA256SUM=134ca9433205d065180073f2e02c62558e4ee7d06115112189746991a40b8fde
 
 .PRECIOUS: $(DOWNLOAD_DIR)/tools/vault@$(VAULT_VERSION)_$(HOST_OS)_$(HOST_ARCH)
 $(DOWNLOAD_DIR)/tools/vault@$(VAULT_VERSION)_$(HOST_OS)_$(HOST_ARCH): | $(DOWNLOAD_DIR)/tools
@@ -590,10 +590,10 @@ $(DOWNLOAD_DIR)/tools/protoc@$(PROTOC_VERSION)_$(HOST_OS)_$(HOST_ARCH): | $(DOWN
 		chmod +x $(outfile); \
 		rm -f $(outfile).zip
 
-trivy_linux_amd64_SHA256SUM=f0c5e3c912e7f5194a0efc85dfd34c94c63c4a4184b2d7b97ec7718661f5ead2
-trivy_linux_arm64_SHA256SUM=013c67e6aff35429cbbc9f38ea030f5a929d128df08f16188af35ca70517330b
-trivy_darwin_amd64_SHA256SUM=b022f86ac91d1c4e79cc548f3e470880a2f8150a369058fbd055bee537aca798
-trivy_darwin_arm64_SHA256SUM=3076e27024b92d634fe09947934d36dc8b651a8539ff1d69b4cfac008dfb59ce
+trivy_linux_amd64_SHA256SUM=93678741c3223c15120934ac00671ca7e797c9a5a4d89148db9ffca9184a5f0d
+trivy_linux_arm64_SHA256SUM=a51268845bdeb68f5f885f7de6c92fe33b64d630392e546eec0e16f79cfd42e8
+trivy_darwin_amd64_SHA256SUM=284a3d3346429837f3da11aa6c25bf196e4fe5431733d4f6f99eac8578b329ed
+trivy_darwin_arm64_SHA256SUM=964bb69fc0e652891b38514fed4ee31de004a58ac22ea2a23c6891728bb6b6eb
 
 .PRECIOUS: $(DOWNLOAD_DIR)/tools/trivy@$(TRIVY_VERSION)_$(HOST_OS)_$(HOST_ARCH)
 $(DOWNLOAD_DIR)/tools/trivy@$(TRIVY_VERSION)_$(HOST_OS)_$(HOST_ARCH): | $(DOWNLOAD_DIR)/tools
