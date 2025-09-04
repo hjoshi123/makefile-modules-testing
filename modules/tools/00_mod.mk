@@ -64,6 +64,7 @@ tools :=
 # renovate: datasource=github-releases packageName=helm/helm
 tools += helm=v3.18.6
 # https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
+# renovate: datasource=github-releases packageName=kubernetes/kubernetes
 tools += kubectl=v1.33.3
 # https://github.com/kubernetes-sigs/kind/releases
 # renovate: datasource=github-releases packageName=kubernetes-sigs/kind
@@ -107,7 +108,8 @@ tools += controller-gen=v0.19.0
 # renovate: datasource=go packageName=golang.org/x/tools
 tools += goimports=v0.36.0
 # https://pkg.go.dev/github.com/google/go-licenses/v2?tab=versions
-tools += go-licenses=e4be799587800ffd119a1b419f13daf4989da546
+# renovate: datasource=go packageName=github.com/inteon/go-licenses/v2
+tools += go-licenses=v2.0.0-20250821024731-e4be79958780
 # https://pkg.go.dev/gotest.tools/gotestsum?tab=versions
 # renovate: datasource=github-releases packageName=gotestyourself/gotestsum
 tools += gotestsum=v1.12.3
@@ -161,7 +163,8 @@ tools += image-tool=v0.1.0
 # renovate: datasource=github-releases packageName=cert-manager/cmctl
 tools += cmctl=v2.3.0
 # https://pkg.go.dev/github.com/cert-manager/release/cmd/cmrel?tab=versions
-tools += cmrel=e3cbe5171488deda000145003e22567bdce622ea
+# renovate: datasource=go packageName=github.com/cert-manager/release
+tools += cmrel=v1.12.15-0.20241121151736-e3cbe5171488
 # https://pkg.go.dev/github.com/golangci/golangci-lint/v2/cmd/golangci-lint?tab=versions
 # renovate: datasource=go packageName=github.com/golangci/golangci-lint/v2
 tools += golangci-lint=v2.4.0
@@ -199,9 +202,11 @@ tools += applyconfiguration-gen=$(K8S_CODEGEN_VERSION)
 tools += defaulter-gen=$(K8S_CODEGEN_VERSION)
 tools += conversion-gen=$(K8S_CODEGEN_VERSION)
 # https://github.com/kubernetes/kube-openapi
-tools += openapi-gen=9bd5c66d9911c53f5aedb8595fde9c229ca56703
+# renovate: datasource=go packageName=k8s.io/kube-openapi
+tools += openapi-gen=v0.0.0-20250701173324-9bd5c66d9911
 
 # https://raw.githubusercontent.com/kubernetes-sigs/controller-tools/master/envtest-releases.yaml
+# FIXME: Find a way to configure Renovate to suggest upgrades
 KUBEBUILDER_ASSETS_VERSION := v1.33.0
 tools += etcd=$(KUBEBUILDER_ASSETS_VERSION)
 tools += kube-apiserver=$(KUBEBUILDER_ASSETS_VERSION)
@@ -364,8 +369,9 @@ go_dependencies :=
 go_dependencies += ginkgo=github.com/onsi/ginkgo/v2/ginkgo
 go_dependencies += controller-gen=sigs.k8s.io/controller-tools/cmd/controller-gen
 go_dependencies += goimports=golang.org/x/tools/cmd/goimports
-# switch back to github.com/google/go-licenses once
+# FIXME: Switch back to github.com/google/go-licenses once
 # https://github.com/google/go-licenses/pull/327 is merged.
+# Remember to also update the Go package in the Renovate marker over the version (above).
 go_dependencies += go-licenses=github.com/inteon/go-licenses/v2
 go_dependencies += gotestsum=gotest.tools/gotestsum
 go_dependencies += kustomize=sigs.k8s.io/kustomize/kustomize/v5
