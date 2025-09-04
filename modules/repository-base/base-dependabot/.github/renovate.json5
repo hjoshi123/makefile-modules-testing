@@ -5,6 +5,10 @@
   $schema: 'https://docs.renovatebot.com/renovate-schema.json',
   enabled: true,
   gitAuthor: 'Renovate Bot <renovate-bot@users.noreply.github.com>',
+  gitIgnoredAuthors: [
+    'Renovate Bot <renovate-bot@users.noreply.github.com>',
+    'cert-manager-bot <cert-manager-bot@users.noreply.github.com>',
+  ],
   recreateWhen: 'always', // TODO: Remove; temporary fix to force Renovate to ignore "foreign" commits
   enabledManagers: [
     'github-actions',
