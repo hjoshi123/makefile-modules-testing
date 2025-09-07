@@ -38,7 +38,7 @@
       ],
       depNameTemplate: 'envtest',
       matchStrings: [
-        'KUBEBUILDER_ASSETS_VERSION\\s:=\\s(?<currentValue>)\\S+'
+        'KUBEBUILDER_ASSETS_VERSION\\s:=\\s(?<currentValue>\\S+)'
       ],
       datasourceTemplate: 'custom.envtest',
     }
