@@ -3,10 +3,8 @@
   enabled: true,
   gitAuthor: 'Renovate Bot <renovate-bot@users.noreply.github.com>',
   gitIgnoredAuthors: [
-    'Renovate Bot <renovate-bot@users.noreply.github.com>',
-    'cert-manager-bot <cert-manager-bot@users.noreply.github.com>',
+    '157150467+octo-sts[bot]@users.noreply.github.com',
   ],
-  recreateWhen: 'always', // TODO: Remove; temporary fix to force Renovate to ignore "foreign" commits
   enabledManagers: [
     'custom.regex',
     'github-actions',
@@ -16,6 +14,7 @@
     'config:best-practices',
     ':gitSignOff',
     ':disableVulnerabilityAlerts',
+    ':rebaseStalePrs',
     ':prConcurrentLimit10', // Set a limit to avoid too many PRs, at least on the first run
     ':prHourlyLimitNone',
   ],
@@ -66,6 +65,18 @@
       }
     },
     {
+      groupName: null,
+      matchDatasources: [
+        'golang-version',
+      ],
+      separateMinorPatch: true,
+      postUpgradeTasks: {
+        commands: [
+          'make learn-golang-shas',
+        ],
+      },
+    },
+    {
       groupName: 'Misc GitHub actions',
       matchManagers: [
         'github-actions',
@@ -87,6 +98,12 @@
         'digest',
       ],
       dependencyDashboardApproval: true
+    },
+    {
+      matchPackageNames: [
+        'github.com/inteon/go-licenses/**', // FIXME(inteon): See if we can get back to upstream go-licenses
+      ],
+      enabled: false,
     }
   ],
   ignorePaths: [
