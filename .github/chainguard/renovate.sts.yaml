@@ -1,5 +1,5 @@
 issuer: https://token.actions.githubusercontent.com
-subject: repo:cert-manager/makefile-modules:ref:refs/heads/main
+subject: repo:hjoshi123/makefile-modules-testing:ref:refs/heads/main
 
 permissions:
   administration: read
